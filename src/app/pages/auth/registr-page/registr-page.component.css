@@ -1,0 +1,21 @@
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+input.ng-valid.ng-touched {
+  border: 3px solid green;
+}
+
+.form-control validation {
+  color: red;
+}
+
+.card-body {
+  padding: 6px;
+  margin: 0;
+}
+
+element.style {
+  /* height: 89.2vh; */
+}
+
+/*# sourceMappingURL=registr-page.component.css.map */

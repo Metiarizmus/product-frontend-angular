@@ -1,0 +1,24 @@
+.card {
+  margin: 40px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+input.ng-valid.ng-touched {
+  border: 3px solid green;
+}
+
+.form-control validation {
+  color: red;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.vh-100 {
+  height: 10vh !important;
+}
+
+/*# sourceMappingURL=login-page.component.css.map */

@@ -1,0 +1,129 @@
+<section class="" style="margin-top: 40px">
+  <div class="">
+    <div class="row d-flex justify-content-center align-items-center h-80 mx-1">
+      <div class="col-sm-8 col-lg-6">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-sm-10 order-2 order-lg-0">
+
+                <p class="text-center h1 fw-bold mb-4 mx-md-4 mt-1">Sign up</p>
+
+                <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="signup()" style="width: 72%; padding-left: 20%" enctype="multipart/form-data">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control" placeholder="Firstname" formControlName="firstName"/>
+                      <div
+                        *ngIf="form.get('firstName')?.invalid && form.get('firstName')?.touched"
+                        class="validation"
+                      >
+                        <small *ngIf="form.get('firstName')?.errors?.['required']">
+                          First name cant be empty
+                        </small>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example2c" class="form-control" placeholder="Lastname" formControlName="lastName"/>
+                      <div
+                        *ngIf="form.get('lastName')?.invalid && form.get('lastName')?.touched"
+                        class="validation"
+                      >
+                        <small *ngIf="form.get('lastName')?.errors?.['required']">
+                          Last name cant be empty
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-camera fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="file" accept="image/*" id="form3Example2c" class="form-control"
+                             formControlName="avatar" required="false"
+                             (change)="onSelectFile($event)"
+                      >
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4" >
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" class="form-control" placeholder="Email" required  formControlName="email"/>
+                      <div
+                        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+                        class="validation"
+                      >
+                        <small *ngIf="form.get('email')?.errors?.['required']">
+                          Email cant be empty.
+                        </small>
+                        <small *ngIf="form.get('email')?.errors?.['email']">
+                          Enter correct email
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4c" class="form-control" placeholder="Password" formControlName="password"/>
+                      <div
+                        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+                        class="validation"
+                      >
+
+                        <small *ngIf="form.get('password')?.errors?.['required']">
+                          Password cant be empty
+                        </small>
+
+                        <small *ngIf="form.get('password')?.errors?.['minlength']">
+                          The length must be at least {{form.get('password')?.errors?.['minlength']?.['requiredLength']}}characters .
+                          Now it is equal =  {{form.get('password')?.errors?.['minlength']?.['actualLength']}}
+                        </small>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4cd" class="form-control" placeholder="Conform password" formControlName="confirmPassword"/>
+                      <div
+                        *ngIf="form.get('confirmPassword')?.touched"
+                        class="validation"
+                      >
+                        <small *ngIf="form.get('confirmPassword')?.errors?.['mustMatch']">
+                          Passwords must match
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="form.invalid || form.pending ">Register</button>
+                  </div>
+
+                </form>
+
+                <div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<router-outlet></router-outlet>
+

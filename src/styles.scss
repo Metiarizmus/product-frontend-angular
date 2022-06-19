@@ -1,6 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
   margin: 0;
   padding: 0;
@@ -16,6 +17,7 @@ body {
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
+// border-radius: 6px;
 }
 
 /* Handle */
@@ -28,5 +30,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000;
 }
-
-/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,87 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{modal_title}}</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="createProduct(); activeModal.close('Close click')"
+        style="width: 72%; padding-left: 20%" enctype="multipart/form-data">
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="text" id="form3Example1c" class="form-control" placeholder="productName"
+               formControlName="productName"/>
+        <div
+          *ngIf="form.get('productName')?.invalid && form.get('productName')?.touched"
+          class="validation"
+        >
+          <small *ngIf="form.get('productName')?.errors?.['required']">
+            productName cant be empty
+          </small>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="number" id="form3Example2c" class="form-control" placeholder="price" formControlName="price"/>
+        <div
+          *ngIf="form.get('price')?.invalid && form.get('price')?.touched"
+          class="validation"
+        >
+          <small *ngIf="form.get('price')?.errors?.['required']">
+            price cant be empty
+          </small>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="text" id="form3Example2c" class="form-control" placeholder="measureName"
+               formControlName="measureName"/>
+        <div
+          *ngIf="form.get('measureName')?.invalid && form.get('measureName')?.touched"
+          class="validation"
+        >
+          <small *ngIf="form.get('measureName')?.errors?.['required']">
+            measureName cant be empty
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="text" id="form3Example2c" class="form-control" placeholder="typeName" formControlName="typeName"/>
+        <div
+          *ngIf="form.get('typeName')?.invalid && form.get('typeName')?.touched"
+          class="validation"
+        >
+          <small *ngIf="form.get('typeName')?.errors?.['required']">
+            typeName cant be empty
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="file" id="form3Example2c" class="form-control"
+               formControlName="image"
+               (change)="onSelectFile($event); CreateBase64String($event)"
+        >
+      </div>
+    </div>
+
+
+    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+      <button type="submit" class="btn btn-primary btn-lg" [disabled]="form.invalid || form.pending ">Create</button>
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

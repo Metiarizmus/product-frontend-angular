@@ -1,0 +1,14 @@
+/** {*/
+/*  overflow: hidden;*/
+/*  overflow-x:hidden;*/
+/*}*/
+
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+.spin {
+  height: 30px;
+  width: 30px;
+}

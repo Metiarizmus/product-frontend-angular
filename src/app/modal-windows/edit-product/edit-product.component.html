@@ -1,0 +1,48 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{modal_title}}</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+
+<div class="modal-body">
+  <form class="mx-1 mx-md-4" #editForm="ngForm" style="width: 72%; padding-left: 20%" enctype="multipart/form-data">
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="text" id="form3Example1c" class="form-control" name="productName" placeholder="productName"
+               [(ngModel)]="product.productName"/>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="number" id="form3Example2c" class="form-control" name="price" placeholder="price" [(ngModel)]="product.price"/>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="text" id="form3Example3c" class="form-control" name="measureName" placeholder="measureName"
+               [(ngModel)]="product.measureName"/>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <div class="form-outline flex-fill mb-0">
+        <input type="text" id="form3Example4c" class="form-control" name="typeName" placeholder="typeName"
+               [(ngModel)]="product.typeName"/>
+
+      </div>
+    </div>
+
+
+    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+      <button (click)="updateProduct(editForm.value); activeModal.close('Close click')" data-dismiss="modal"
+              class="btn btn-primary">Save changes
+      </button>
+    </div>
+
+  </form>
+
+</div>
+
+

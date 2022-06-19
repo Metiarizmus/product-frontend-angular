@@ -1,0 +1,13 @@
+<div class="row row-cols-1 row-cols-md-4 g-4" *ngIf="isLoadProducts">
+  <div *ngFor="let p of products" class="card-st">
+
+    <app-product-card [product]="p" (updateEmitter)="updateListTasks($event)"></app-product-card>
+
+  </div>
+</div>
+
+<div class="spin" *ngIf="!isLoadProducts">
+  <app-spinner ></app-spinner>
+</div>
+
+

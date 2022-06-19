@@ -1,0 +1,27 @@
+<div class="main-container" style="height: 100%">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/hello']">Products</a>
+
+      <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+      <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+        &#9776;
+      </button>
+
+      <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+      <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+
+        <div class="d-flex flex-row-reverse bd-highlight">
+          <a routerLink="/registr" class="btn btn-outline-primary" role="button">Sign up</a>
+          <a routerLink="/login" class="btn btn-outline-secondary" role="button">Log in</a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+</div>
+
+
+<router-outlet></router-outlet>

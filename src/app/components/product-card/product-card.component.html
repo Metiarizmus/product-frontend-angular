@@ -1,0 +1,32 @@
+<div class="col">
+
+  <div class="card border-dark mb-3" style="width: 18rem;">
+    <div class="card-header" *ngIf="role === 'ROLE_ADMIN'">
+      <button type="button" class="btn-close" style="float: right" (click)="confirmBox()" aria-label="Close"></button>
+    </div>
+
+    <div class="image">
+      <img src="{{'data:image/jpg;base64,' + product.image}}" class="card-img-top" alt="..."
+           *ngIf="product.image != undefined">
+
+      <img src="{{product.cardImageBase64}}" class="card-img-top" alt="..."
+           *ngIf="product.image == undefined && product.cardImageBase64 != ''">
+    </div>
+
+
+    <div class="card-body">
+      <h5 class="card-title">{{product.productName}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">measure = {{product.measureName}}</li>
+      <li class="list-group-item">type = {{product.typeName}}</li>
+      <li class="list-group-item">price = {{product.price}}</li>
+    </ul>
+    <div class="card-body" style="text-align: center">
+      <button type="button" class="btn btn-info" (click)="addToCart()" *ngIf="role === 'ROLE_USER'">Add to cart</button>
+      <button type="button" class="btn btn-secondary" (click)="edit()" *ngIf="role === 'ROLE_ADMIN'">Edit</button>
+    </div>
+  </div>
+
+</div>
+
